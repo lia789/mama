@@ -1,0 +1,63 @@
+EXISTING_DOCUMENT:
+"""
+
+I need you to harvest this addresess into excel looking like this in order FULL NAME, STREET/ADDRESS, STREET NUMBER ,PHONE, CELLPHONE and that is all i need
+
+i have tip for you, if you see street name "Karlovačka 4 and Karlovačka 4b in excel" Imenik.hr will give you every person on nuber 4 including 4a,4b,4c,4e whatever is with 4 so when you harvest data and select person with that street number just putt number and harvest all of them
+
+
+# Search Query
+Zagreb, Avenija marina držića 14
+Zagreb, Karlovačka cesta 2B
+
+https://www.imenik.hr/imenik/trazi/1/Osobe/sve/sve/i/zagreb,%20avenija%20marina%20dr%C5%BEi%C4%87a%2014.html
+
+Go to next page pagination as possible
+"""
+
+"""
+https://www.imenik.hr/imenik/15109296/detalji/Igor%20Apn%20Zagreb%20%C5%BDerjav.html   (Teliphone)
+https://www.imenik.hr/imenik/17093932/detalji/Cedepe%20Zagreb.html  (Mobile)
+https://www.imenik.hr/imenik/17107674/detalji/Martina%20Podravec%20Zagreb%20Habitatio.html (2 Mobile)
+https://www.imenik.hr/imenik/16423805/detalji/Josip%20Repnjak.html (3 Teliphone)
+"""
+
+
+LIST_OF_COLUMNS:
+_01_FULL_NAME
+_02_ADDRESS
+_03_ADDRESS_NUMBER
+_04_PHONE
+_05_CELLPHONE
+_06_PROFILE_URL
+
+# Additional columns
+_07_SEARCH_KEYWORD
+_08_DATA_FOUND
+_09_SEARCH_URL
+_10_FULL_ADDRESS
+_11_MOBILE_2
+_12_MOBILE_3
+_13_MOBILE_4
+_14_CELLPHONE_2
+_15_CELLPHONE_3
+_16_CELLPHONE_4
+_17_CITY
+
+
+
+LIST_OF_STEPS_TO_FOLLOW:
+1. Read address from CSV file and make it as foramt search Query
+2. Go to base url "https://www.imenik.hr/imenik/trazi/1/Osobe/sve/sve/vaznost/zagreb,%20karlova%C4%8Dka%20cesta%202b.html"
+3. Input search Query
+4. Tik down persion and press filter button
+5. Extract page number help of total data devided by 10
+6. Inject page number and follow as range
+7. Extract profile url
+8. Follow profile url
+9. Extract data and save on data list
+10. Save data as CSV file
+
+
+
+
